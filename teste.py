@@ -85,3 +85,91 @@ pd=carro*60
 pk=km*0.15
 print("de acordo com os dados digitado, o valor do dia ficou por R${:.2f} e pelos km rodados ficou por R${:.2f},".format(pd,pk),end="")
 print(" logo o valor total a pagar ficou por R${:.2f}".format(pd+pk))
+
+#desafio.py 16
+from math import floor,trunc
+num=float(input("digite um número real: "))
+print("O número digitado {}, sua porção interia desse numero é {}".format(num,floor(num)))
+#ou
+print("O número digitado {}, sua porção interia desse numero é {:.0f}".format(num,num))
+#ou
+print("O número digitado {}, sua porção interia desse numero é {}".format(num,trunc(num)))
+
+#desafio.py 17
+from math import hypot,trunc
+co=float(input("comprimento do cateto oposto: "))
+ca=float(input("comprimento do cateto adjacente: "))
+hi= hypot(co,ca)
+print('A hipotenusa vai medir {}'.format(trunc(hi)))
+
+#desafio.py 18
+from math import cos,tan,sin,radians
+an=(float(input("digite o angulo: ")))
+seno=sin(radians(an))
+co=cos(radians(an))
+tg=tan(radians(an))
+print("o angulo de {}, tem o seno de {:.2f},cosseno de {:.2f} e tangente de {:.2f}".format(an,seno,co,tg))
+
+#desafio.py 19
+from random import choice
+a1=input("digite o nome do primeiro aluno(a):\n")
+a2=input("digite o nome do segundo aluno(a):\n")
+a3=input("digite o nome do terceiro aluno(a):\n")
+a4=input("digite o nome do quarto aluno(a):\n")
+lista=[a1,a2,a3,a4]
+escolhido=choice(lista)
+print("o aluno escolhido foi {}".format(escolhido))
+
+#desafio.py 20
+from random import shuffle
+a1=input("digite o nome do primeiro aluno(a):\n")
+a2=input("digite o nome do segundo aluno(a):\n")
+a3=input("digite o nome do terceiro aluno(a):\n")
+a4=input("digite o nome do quarto aluno(a):\n")
+lista=[a1,a2,a3,a4]
+shuffle(lista)
+print("a ordem de apresentação será: ")
+print(lista)
+
+#desafio.py 21
+import pygame 
+pygame.init()
+pygame.mixer.music.load("cmp.mp3")
+pygame.mixer.music.play()
+input()
+pygame.event.wait()
+
+#desafio.py 22
+nome=str(input('digite seu nome completo:\n')).strip()
+div=nome.split()
+print('seu nome:')
+print('Em maiúsculas é:',nome.upper())
+print('Em minúsculas é:',nome.lower())
+print('Seu nome tem ao todo {} letras'.format(len(nome)-nome.count(' ')))
+print('O primeiro nome tem {} letras'.format(len(div[0])))
+
+#desafio.py 23
+#forma numerica
+num=int(input('Informe o número: '))
+print('unidade: {}'.format(num//1%10))
+print('dezena: {}'.format(num//10%10))
+print('centena: {}'.format(num//100%10))
+print('milhar: {}'.format(num//1000%10))
+
+#desafio.py 24
+cidade=str(input("Em que cidade você nasceu?\n")).strip()
+print('santo'in cidade)
+
+#desafio.py 25
+nome=str(input('qual é o seu nome completo? ')).strip()
+print('seu nome tem silva?\n','silva'in nome.lower())
+
+#desafio.py 26
+frase=str(input("digite uma frase:\n")).strip().upper()
+print("na sua frase aparece a letra A: {}".format(frase.count('A')))
+print('E aparece pela primeira vez na posição: {}'.format(frase.find('A')+1))
+print('E a ultima vez que aparece a letra A é: {}'.format(frase.rfind('A')+1))
+
+#desafio.py 27(
+nome=str(input("digite seu nome completo:\n")).strip().split()
+print("seu primeiro nome é: {}\n e seu ultimo nome é:{}".format(nome[0],nome[len(nome)-1]))
