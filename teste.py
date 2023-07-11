@@ -173,3 +173,39 @@ print('E a ultima vez que aparece a letra A é: {}'.format(frase.rfind('A')+1))
 #desafio.py 27(
 nome=str(input("digite seu nome completo:\n")).strip().split()
 print("seu primeiro nome é: {}\n e seu ultimo nome é:{}".format(nome[0],nome[len(nome)-1]))
+
+#desafio.py 28
+from random import randint
+from time import sleep
+n=randint(0,5)
+n1=int(input("tente acertar o número sorteado, de 0 á 5:\n"))
+print("PROCESSANDO...")
+sleep(2)
+if n1 == n:
+    print("você acertou o número, PARABÉNSSS!!!")
+else:
+    print("você errou!!!, o número era: {}".format(n))
+
+#desafio.py 29
+v=float(input("Qual a vélocidade atual do carro?\n"))
+if v>80:
+    print("Você ultrapassou o limite de velocidade, pague R${:.2f} de multa".format((v-80)*7))
+else:
+    print("está dentro do limite de velocidade")
+
+#desafio.py 30
+n=int(input("digite um número inteiro qualquer:\n"))
+if n % 2 == 0:
+    print("é um número PAR")
+else:
+    print("é um número IMPAR")
+
+#desafio.py 31
+
+p=float(input("digite a distância da sua viagem:\n"))
+if p<=200:
+    print(" o preço da passagem ficou por R${:.2f}".format(p*0.50))
+elif p>200:
+    print("o preço da passagem ficou por R${:.2f}".format(p*0.45))
+
+print("obrigado por escolher nossa plataforma")
