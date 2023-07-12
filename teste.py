@@ -209,3 +209,49 @@ elif p>200:
     print("o preço da passagem ficou por R${:.2f}".format(p*0.45))
 
 print("obrigado por escolher nossa plataforma")
+
+#desafio.py 32
+from datetime import date
+ano=int(input("digite o ano que deseja analisar:\n obs:caso deseja analisar o ano atual digite 0\n "))
+if ano ==0:
+    ano= date.today().year    
+if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:
+    print("o ano {} é BISSEXTO".format(ano))
+else:
+    print(" O ano {} não é bissexto".format(ano))
+
+#desafio.py 33
+n1=int(input("digite o primeiro número:\n"))
+n2=int(input("digite o segundo número:\n"))
+n3=int(input("digite o terceiro número:\n"))
+if n1 < n2 and n1 < n3:
+    menor=n1
+if n2 < n1 and n2 < n3:
+    menor=n2
+if n3 < n1 and n3 < n2:
+    menor=n3
+if n1 > n2 and n1 > n3:
+    maior=n1
+if n2 > n1 and n2 > n3:
+    maior=n2
+if n3 > n1 and n3 > n2:
+    maior=n3
+print("o menor numero é {} e o maior é {}".format(menor,maior))
+
+#desafio.py 34
+s=float(input("digite o salário atual para acontecer o reajuste:\n"))
+if s > 1250:
+    print("Com base no valor digitado voce terá um aumento de 10%, então seu salário agora é R${:.2f}".format(s+(s*10/100)))
+if s <= 1250:
+    print("com base no valor digitado voce terá um aumento de 15%, então seu salário agora é R${:.2f}".format(s+(s*15/100)))
+
+#desafio.py 35
+
+n1=float(input("digite o primeiro segmento:\n"))
+n2=float(input("digite o segundo segmento:\n"))
+n3=float(input("digite o terceiro segmento:\n"))
+
+if n1 < n2+n3 and n2 < n1+n3 and n3 < n1+n2:
+    print("pode formar um triângulo")
+else:
+    print("Não pode formar um triangulo")
