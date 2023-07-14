@@ -373,7 +373,7 @@ else:
 
 #desafio.py 43
 peso=float(input(" Qual é o seu peso?\n"))
-altura=float(input("Qual é a sula altura?\n"))
+altura=float(input("Qual é a sua altura?\n"))
 imc= peso/(altura**2)
 if imc < 17:
     print("Você está muito abaixo do peso")
