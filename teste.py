@@ -255,3 +255,219 @@ if n1 < n2+n3 and n2 < n1+n3 and n3 < n1+n2:
     print("pode formar um triângulo")
 else:
     print("Não pode formar um triangulo")
+
+#desafio.py 36
+from time import sleep
+casa=float(input("Digite o valor da casa:\nR$"))
+anosp=float(input("Em quantos anos vai querer pagar:\n"))
+parcela=anosp * 12
+compra= casa / parcela
+print("\033[1;33mPROCESSANDO...\033[m")
+sleep(1)
+print("O valor a pagar ficou por {:.0f}x parcelas de R${:.2f}".format(parcela,compra))
+s=float(input("digite seu salário,para a solicitação de um empréstimo:\nR$"))
+em=(s*30) / 100
+print("\033[1;33mPROCESSANDO...\033[m")
+sleep(1)
+if  compra < em:
+    print("\033[1;32mEmpréstimo CONFIRMADO\033[m")
+else:
+    print("\033[1;31mEmpréstimo NEGADO\033[m")
+
+#desafio.py 37
+n1=int(input("digite um número inteiro:\n"))
+print("Escolha a opção de conversão:")
+print("\033[1;37m[1]\033[m converter para BINÁRIO")
+print("\033[1;37m[2]\033[m converter para OCTAL")
+print("\033[1;37m[3]\033[m converter para HEXADECIMAL")
+n2=int(input("Sua opção: "))
+if n2 == 1:
+    print(" {} convertido para BINÁRIO é igual a {}".format(n1,bin(n1)[2:]))
+elif n2 == 2:
+    print(" {} convertido para OCTAL é igual a {}".format(n1,oct(n1)[2:]))
+elif n2 == 3:
+    print(" {} convertido para HEXADECIMAL é igual a {}".format(n1,hex(n1)[2:]))
+else:
+    print("\033[1;31mOpção INVÁLIDA.\nTente novamente.\033[m")
+
+#desafio.py 38
+n1=int(input("digite o primeiro número inteiro:\n"))
+n2=int(input("digite o segundo número inteiro:\n"))
+
+if n1 < n2:
+    print("O número maior é {} e o menor é {}".format(n2,n1))
+elif n1 == n2:
+    print("Não a diferença númerica, os dois número são iguais")
+else:
+    print("O número maior é {} e o menor é {}".format(n1,n2))
+
+#desafio.py 39
+from datetime import date
+print("-"*20)
+print("\033[1mALISTAMENTO MILITAR\033[m")
+anon=int(input("Digite o ano do seu nascimento:\n"))
+genero=str(input("Digite seu gênero:\n")).strip().capitalize().replace(" ","")
+al=date.today().year - anon
+at=date.today().year
+
+if al == 18 and genero =='Homem':
+    print("\033[1;32mTa na hora de se alistar jovem!!!\033[m")
+elif al == 18 and genero =='Mulher':
+    print("\033[1;33mNão precisa se alistar\033[m")
+elif al < 18 and genero =='Homem':
+    f = 18 - al
+    k= at + f
+    print("\033[1;33mNão pode se alistar ainda, faltam {} anos\nlogo poderá se alistar no ano de {}\033[m".format(f,k))
+elif al < 18 and genero =='Mulher':
+    print("\033[1;33mNão precisa se alistar\033[m")    
+elif al > 18 and genero == 'Homem':
+    f = al - 18
+    k= at - f
+    print("\033[1;31mPASSOU DO PRAZO DE ALISTAMENTO,era para você ter se alistado no ano de {}\033[m".format(k))
+elif al > 18 and genero == 'Mulher':
+    print("\033[1;33mNão precisa se alistar\033[m")
+#desafio.py 40
+n1=float(input("Digite sua primeira nota:\n"))
+n2=float(input("Digite sua segunda nota:\n"))
+media=(n1+n2)/2
+
+if media < 5:
+    print("\033[1;31mREPROVADO\033[m")
+elif media >= 5 or media <= 6.9:
+    print("\033[1;33mRECUPERAÇÃO\033[m")
+else:
+    print("\033[1;32mAPROVADO\033[m")
+
+#desafio.py 41
+from datetime import date
+ano=date.today().year
+atleta=int(input("Digite o ano do seu nascimento:\n"))
+idade=ano-atleta
+print("Você tem {} anos".format(idade))
+if idade <= 9: 
+    print("Categoria Mirim")
+elif idade<=14: 
+    print(" categoria infantil")
+elif idade <=19:
+    print("categoria Júnior")
+elif idade <=25:
+    print("categoria sênior")
+else:
+    print("categoria master")
+
+#desafio.py 42
+n1=float(input("digite o primeiro segmento:\n"))
+n2=float(input("digite o segundo segmento:\n"))
+n3=float(input("digite o terceiro segmento:\n"))
+
+if n1<n2+n3 and n2<n1+n3 and n3<n1+n2:
+    print("Esses segmentos formam um triangulo ")
+    if n1 == n2 == n3:
+        print("EQUILÁTERO")
+    elif n1 == n2 !=n3:
+        print(" ISÓSCELES")
+    else:
+        print(" ESCALENO")
+else:
+    print("Não forma um triangulo")
+
+#desafio.py 43
+peso=float(input(" Qual é o seu peso?\n"))
+altura=float(input("Qual é a sula altura?\n"))
+imc= peso/(altura**2)
+if imc < 17:
+    print("Você está muito abaixo do peso")
+elif imc == 17 or imc<=18.49:
+    print("Seu imc é {:.2f} você está abaixo do peso".format(imc))
+elif imc <= 24.99:
+    print("Seu imc é {:.2f} você está com o peso normal".format(imc))
+elif imc <= 29.99:
+    print("Seu imc é {:.2f} você está acima do peso".format(imc))
+elif imc <= 34.99:
+    print("Seu imc é {:.2f} você está com obesidade,CUIDADO!".format(imc))
+elif imc <= 39.99:
+    print("Seu imc é {:.2f} você está com obesidade severa,CUIDADO!".format(imc))
+else:
+    print("Seu imc é {:.2f} você está com obesidade morbida, CUIDADO!".format(imc))
+
+#desafio.py 44
+n1=float(input("digite o preço do produto:\nR$"))
+print("\033[1;37m[1]\033[m-á vista dinheiro/cheque")
+print("\033[1;37m[2]\033[m-á vista no cartão")
+print("\033[1;37m[3]\033[m-2x no cartão sem juros")
+print("\033[1;37m[4]\033[m-3x ou mais no cartão com juros de 20%")
+n2=int(input("Digite a opção de pagamento:\n").strip())
+if n2 == 1:
+    d10 = n1-n1*(10/100)
+    print("a vista você ganha desconto de 10%, ficando por R${:.2f}".format(d10))
+elif n2 == 2:
+    d5 = n1-n1*(5/100)
+    print("a vista você ganha desconto de 5%, ficando por R${:.2f}".format(d5))
+elif n2 == 3:
+    vp=int(input("vai parcelar em quantas vezes?\n").strip())
+    if vp == 2:
+        p=n1 / 2
+        print("O preço ficou {}x parcelas de R${:.2f}".format(vp,p))
+    else:
+        print("\033[1;31mresolução da compra invalida\033[m")
+elif n2 == 4:
+    p=int(input("vai parcelar em quantas vezes?\n").strip())
+    if p >= 3:
+        pj=(n1*(20/100)+n1)/p
+        print("O preço ficou {}x parcelas de R${:.2f}".format(p,pj))
+    else:
+        print("\033[1;31mresolução da compra invalida\033[m")
+else:
+     print("\033[1;31mresolução da compra invalida\033[m")
+
+#desafio.py 45
+from random import randint
+from time import sleep
+print("-*-"*20)
+print("\033[1;33mJOKENPOOOO!!\033[m")
+print("-*-"*20)
+print("\033[1;37m[0]\033[m-PEDRA")
+print("\033[1;37m[1]\033[m-PAPEL")
+print("\033[1;37m[2]\033[m-TESOURA")
+n1=int(input("escolha uma das opções para competir com o computador:\n"))
+lista=('Pedra','Papel','Tesoura')
+pc=randint(0,2)
+print("\033[1;33mJO\033[m")
+sleep(1)
+print("\033[1;33mKEN\033[m")
+sleep(1)
+print("\033[1;33mPO\033[m")
+sleep(1)
+print("você jogou {}".format(lista[n1]))
+print("anonimo jogou {}".format(lista[pc]))
+if  pc == 0:
+    if n1 == 0:
+        print("\033[1;33mEMPATE\033[m")
+    elif n1 == 1:
+        print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
+    elif n1 ==2:
+        print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
+    else:
+        print("\033[1;31mJOGADA INVALIDA\033[m")
+elif pc == 1:
+    if n1 == 0:
+        ("\033[1;35mAnonimo Venceu, é uma pena\033[m")   
+    elif n1 ==1:
+        print("\033[1;33mEMPATE\033[m")
+    elif n1 == 2:
+       print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
+    else:
+        print("\033[1;31mJOGADA INVALIDA\033[m")
+elif pc == 2:
+    if n1 == 0:
+        print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")   
+    elif n1 ==1:
+       print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
+    elif n1 == 2:
+        print("\033[1;33mEMPATE\033[m")
+    else:
+        print("\033[1;31mJOGADA INVALIDA\033[m")
+else:
+    print("\033[1;31mJOGADA INVALIDA\033[m")
+
+
