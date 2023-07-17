@@ -429,42 +429,43 @@ print("-*-"*20)
 print("\033[1;37m[0]\033[m-PEDRA")
 print("\033[1;37m[1]\033[m-PAPEL")
 print("\033[1;37m[2]\033[m-TESOURA")
-n1=int(input("escolha uma das opções para competir com o computador:\n"))
+n1=int(input("escolha uma das opções para competir com o computador:\n").strip())
 lista=('Pedra','Papel','Tesoura')
 pc=randint(0,2)
-print("\033[1;33mJO\033[m")
-sleep(1)
-print("\033[1;33mKEN\033[m")
-sleep(1)
-print("\033[1;33mPO\033[m")
-sleep(1)
-print("você jogou {}".format(lista[n1]))
-print("anonimo jogou {}".format(lista[pc]))
-if  pc == 0:
-    if n1 == 0:
-        print("\033[1;33mEMPATE\033[m")
-    elif n1 == 1:
-        print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
-    elif n1 ==2:
-        print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
-    else:
-        print("\033[1;31mJOGADA INVALIDA\033[m")
-elif pc == 1:
-    if n1 == 0:
-        ("\033[1;35mAnonimo Venceu, é uma pena\033[m")   
-    elif n1 ==1:
-        print("\033[1;33mEMPATE\033[m")
-    elif n1 == 2:
-       print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
-    else:
-        print("\033[1;31mJOGADA INVALIDA\033[m")
-elif pc == 2:
-    if n1 == 0:
-        print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")   
-    elif n1 ==1:
-       print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
-    elif n1 == 2:
-        print("\033[1;33mEMPATE\033[m")
+if n1 == 0 or n1 == 1 or n1 == 2:
+    print("\033[1;33mJO\033[m")
+    sleep(1)
+    print("\033[1;33mKEN\033[m")
+    sleep(1)
+    print("\033[1;33mPO\033[m")
+    sleep(1)    
+    print("você jogou {}".format(lista[n1]))
+    print("anonimo jogou {}".format(lista[pc]))
+    if  pc == 0:
+        if n1 == 0:
+            print("\033[1;33mEMPATE\033[m")
+        elif n1 == 1:
+            print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
+        elif n1 ==2:
+            print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
+        else:
+            print("\033[1;31mJOGADA INVALIDA\033[m")
+    elif pc == 1:
+        if n1 == 0:
+            print("\033[1;35mAnonimo Venceu, é uma pena\033[m")   
+        elif n1 ==1:
+            print("\033[1;33mEMPATE\033[m")
+        elif n1 == 2:
+            print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")
+        else:
+            print("\033[1;31mJOGADA INVALIDA\033[m")
+    elif pc == 2:
+        if n1 == 0:
+            print("\033[1;32mVOCÊ VENCEU,PARABENS!!!\033[m")   
+        elif n1 ==1:
+            print("\033[1;35mAnonimo Venceu, é uma pena\033[m")
+        elif n1 == 2:
+            print("\033[1;33mEMPATE\033[m")
     else:
         print("\033[1;31mJOGADA INVALIDA\033[m")
 else:
