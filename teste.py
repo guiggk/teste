@@ -471,4 +471,375 @@ if n1 == 0 or n1 == 1 or n1 == 2:
 else:
     print("\033[1;31mJOGADA INVALIDA\033[m")
 
+#desafio.py 46
+from time import sleep
+print("contagem regressiva para os fogos:")
+for c in range(10,0-1,-1):#ou (10,-1,-1)
+    print(c)
+    sleep(0.5)
+print("Booommmmm!!!!!")
+
+#desafio.py 47
+for c in range(2,51,2):
+    print(c,end=' ')
+print("fim")
+
+#desafio.py 48
+s=0
+cont=0
+for c in range(1,501,2):
+    if c % 3 == 0:
+     s+=c#acumulador
+     cont=cont+1#contador
+print(" a soma de todos {} valores foi:{}".format(cont,s))
+
+#desafio.py 49
+n=int(input("digite um número para ver sua tabuada:\n"))
+print("-"*10)
+for c in range(0,11):
+   print("{}x{:2}= {}".format(n,c,n*c))
+print("-"*10)
+
+#desafio.py 50
+s=0
+cont=0
+for c in range(0,6):
+    n=int(input("digite um número: "))
+    if n % 2 == 0:
+      s+=n
+      cont+=1
+print("os {} números pares informados,sua soma foi {}".format(cont,s))
+
+#desafio.py 51
+print("="*30)
+print("    10  TERMOS DE UMA  P.A      ")
+print("="*30)
+pr=int(input("primeiro termo: "))
+R=int(input("Razão: "))
+soma=0
+dec=pr+(10-1)*R
+for c in range(pr,dec+R,R):
+    soma+=pr
+    print(soma,end="-> ")
+print("Acabou")
+
+#desafio.py 52
+n=int(input("digite um número: "))
+cont=0
+for c in range(1,n+1):
+    if n % c == 0:
+      print("\033[33m",end="")
+      cont+=1  
+    else:
+       print("\033[31m",end="")
+    print("{} ".format(c),end="")
+print("\n\033[m o número {} foi divisível {} vezes".format(n,cont))
+if cont == 2:
+   print("É um número primo")
+else:
+   print(" Não é um número primo")
+
+#desafio.py 53
+no=str(input("digite uma frase: ")).strip().upper()
+div=no.split()
+jun="".join(div)
+inverso=""
+for letra in range(len(jun)-1,-1,-1):
+   inverso+= jun[letra]
+#ou
+#inverso = jun{::-1}
+print( " o inverso de {} é {}".format(jun,inverso))
+if inverso == jun:
+   print(" É um palíndromo!")
+else:
+   print("a frase digitada não é um palíndromo!")
+
+#desafio.py 54
+from datetime import date
+cont=0
+contm=0
+anot=date.today().year
+for c in range(1,8):
+    ano=int(input("digite o ano de nascimento da {}° pessoa: ".format(c)))
+    maioridade=anot-ano
+    if maioridade >= 18:
+        cont+=1
+    else:
+        contm+=1
+print(" Das 7 pessoas, {} pessoa atingiram a maioridade".format(cont))
+print(" Das 7 pessoas, {} pessoas não atingiram a maioridade".format(contm))
+
+#desafio.py 55
+maior=0
+menor=0
+for c in range(1,6):
+    peso=float(input("peso da {}° pessoa: ".format(c)))
+    if c == 1:
+       maior = peso
+       menor = peso
+    else:
+        if peso> maior:
+            maior = peso
+        if peso < menor:
+            menor = peso
+print(" o maior peso lido foi de {}Kg".format(maior))
+print(" o menor peso lido foi de {}Kg".format(menor))
+
+#desafio.py 56
+maiorh=0
+nomems=0
+soma=0
+media=0
+totmulher= 0
+for c in range(1,5):
+    print("----{}° PESSOA----".format(c))
+    nome=str(input("Nome: ")).strip()
+    idade=int(input("Idade: ").strip())
+    sexo=str(input("Sexo(M/F): ")).strip().upper()
+    soma+=idade
+    if c == 1 and  sexo == "M":
+        maiorh= idade
+        nomems= nome
+    if sexo == "M" and idade> maiorh:
+        maiorh= idade
+        nomems= nome
+    if sexo == "F" and idade < 20:
+        totmulher += 1
+media= soma/4
+print("A média de idade do grupo é de {} anos".format(media))
+print(" O nome da pessoa mais velha é {} tem {} anos".format(nomems,maiorh))    
+print(" Ao todo são {} mulheres com menos de 20 anos".format(totmulher))
+    
+#desafio.py 57
+s=str(input("digite o seu sexo: [M/F]\n")).strip().upper()[0]
+while s != 'M' and s!= 'F':
+    s=str(input("Dados inválidos.digite o seu sexo novamente: [M/F]\n")).strip().upper()[0]
+print("sexo confirmado")
+
+#desafio.py 58
+from  random import randint
+from time import sleep
+print("=======JOGO DE ADIVINHAÇÃOOO!!!====== ")
+print("\033[1;33mOlá vou pensar em um número e quero\nver você conseguir adivinhar hehe\033[m")
+print("="*37)
+n1=input("-digite o número de 0 á 10 que você acha que o computador pensou:\n").strip()
+while not n1.isnumeric() or int(n1)<0 or int(n1)>10:
+    print("\033[1;31mDIGITE APENAS NÚMEROS\033[m")
+    n1=input("-digite o número de 0 á 10 que você acha que o computador pensou:\n").strip()
+n1=int(n1)
+cont=0
+n=randint(0,10)
+print("\033[1;33mPROCESSANDO\033[m",end="")
+for c in range(3):
+    print("\033[1;m.\033[m",end='',flush=True)
+    sleep(1)
+print("")
+while n1 != n:
+    n1=int(input("\033[1;31mERROUU!!\nVou pensar em outro número,tente novamente:\033[m\n").strip())
+    n=randint(0,10)
+    cont+=1
+    print("\033[1;33mPROCESSANDO\033[m",end="")
+    for c in range(3):
+        print("\033[1;m.\033[m",end='',flush=True)
+        sleep(0.5)
+    print("")
+    if n1==n:
+        print("\033[1;32mPARABÉNSSSS VOCÊ ACERTOU!!\033[m")
+print("\033[1;33mVocê acertou o número depois de {} tentativas\033[m".format(cont))
+
+#desafio.py 59
+n=1
+l='n'
+while n != 5 and l != "N":
+    n1=float(input("digite um número: "))
+    n2=float(input("digite o segundo número: "))
+    print("[1]-somar\n[2]-multiplicar\n[3]-maior\n[4]novos número\n[5]-sair do programa")
+    n=int(input("escolha a opção: "))
+    if n == 1:
+        print("a soma dos números foi {:.2f}".format(n1+n2))
+        l=str(input("Deseja continuar? [S/N]\n")).upper().strip()
+    elif n == 2:
+        print("a multiplicação dos números foi {:.2f}".format(n1*n2))
+        l=str(input("Deseja continuar? [S/N]\n")).upper().strip()
+    elif n == 3:
+        if n1 > n2:
+            print("O maior número entre {} e {} é {}".format(n1,n2,n1))
+            l=str(input("Deseja continuar? [S/N]\n")).upper().strip()
+        else:
+           print("O maior número entre {} e {} é {}".format(n1,n2,n2))
+           l=str(input("Deseja continuar? [S/N]\n")).upper().strip()
+    else:
+        print("Opção inválida. Tente novamente")
+print("Fim do programa")
+
+#desafio.py 60
+from math import factorial
+n=int(input("Digite um número para calcular seu fatorial: "))
+c= n 
+f=factorial(n)
+print("Calculado {}! = ".format(n),end="")
+while c>0:
+    print("{}".format(c),end="")
+    print(" x " if c > 1 else " = ",end='')
+    c-=1
+print("{}".format(f))
+
+#desafio.py 61
+print("=====Gerado de PA=====")
+print("")
+p1=int(input("Digite um primeiro termo: "))
+razão=int(input("Razão de PA: "))
+termo=p1
+cont=1
+while cont <= 10:
+    print("{} -> ".format(termo),end="")
+    termo+=razão
+    cont+=1
+print("fim")
+
+#desafio.py 62
+print("=====Gerado de PA=====")
+print("")
+p1=int(input("Digite um primeiro termo: "))
+razão=int(input("Razão de PA: "))
+termo=p1
+cont=1
+total=0
+mais=10
+while mais !=0:
+    total+=mais
+    while cont <= total:
+        print("{} -> ".format(termo),end="")
+        termo+=razão
+        cont+=1
+    print("PAUSA")
+    mais=int(input("Quantos termos você quer mostrar a mais?"))
+print("fim")
+
+#desafio.py 63
+print("sequência de fibonacci")
+n=int(input("Digite quantos termos você quer mostrar: "))
+t1=0
+t2=1
+print("{} -> {}".format(t1,t2),end="")
+cont=3
+while cont <= n:
+    t3=t1+t2
+    print(" -> {}".format(t3),end="")
+    t1=t2
+    t2=t3
+    cont+=1
+print(" -> fim")
+
+#desafio.py 64
+n=cont=soma=0
+n=int(input("Digite um número inteiro: [999 para parar]"))
+while n != 999:
+    soma+=n
+    cont+=1
+    n=int(input("Digite um número inteiro: [999 para parar]"))
+print("foram digitados {} números e a soma entre eles foi {}".format(cont,soma))
+
+#desafio.py 65
+l="n"
+soma=cont=maior=menor=0
+while l !="N":
+    n=int(input("digite um número: "))
+    l=str(input("Quer continuar?[S/N]\n")).upper().strip()[0]
+    cont+=1
+    soma+=n
+    media=soma/cont
+    if cont == 1:
+        maior=menor=n
+    else:
+        if n>maior:
+            maior=n
+        if n<menor:
+            menor=n
+print("Você digitou {} números e a média foi {:.2f}".format(cont,media))
+print("o maior número foi {} e o menor foi {}".format(maior,menor))
+
+#Desafio.py 66
+cont=s=0
+while True:
+    n=int(input("digite um número (Digite 999 para parar): ").strip())
+    if n == 999:
+        break
+    cont+=1
+    s+=n
+print(f"foram digitado {cont} números e a soma entre eles foi {s}")
+
+#Desafio.py 67
+print("-----Tabuada.v3----")
+n=0
+while True:
+    n=int(input("Quer ver a tabuada de qual valor(digite 0 para encerrar)? "))
+    if n <= 0:
+        break
+    else:
+        for c in range(0,11):
+            print("--------------")
+            print(f"{n} x {c} = {n*c}")   
+print("Tabuada encerrada") 
+
+#Desafio.py 68
+from random import randint
+cont=0
+print("------ PAR OU ÍMPAR ------")
+while True:
+    pc=randint(0,10)
+    j=int(input("Diga um valor: "))
+    p_i=str(input("Par ou ímpar? [P/I]\n")).strip().upper()[0]
+    print("-"*30)
+    t=pc+j
+    if t % 2 == 0 and p_i == "P":
+        print(f"você jogou {j} e o computador {pc}. Total de {t} Deu par")
+        print("-"*20)
+        print("VOCÊ venceu")
+        print("Vamos jogar novamente...")
+        print("-"*20)
+    elif t % 2 == 1 and p_i =="I":
+        print(f"você jogou {j} e o computador {pc}. Total de {t} Deu impar")
+        print("-"*20)
+        print("VOCÊ venceu")
+        print("Vamos jogar novamente...")
+        print("-"*20)
+    elif t % 2 == 0 and p_i =="I":
+        print(f"você jogou {j} e o computador {pc}. Total de {t} Deu Par")
+        print("-"*20)
+        print("VOCÊ PERDEU")
+        break
+    elif t % 2 == 1 and p_i =="P":
+        print(f"você jogou {j} e o computador {pc}. Total de {t} Deu impar")
+        print("-"*20)
+        print("VOCÊ PERDEU")
+        print("-"*20)
+        break
+    cont+=1
+print(f"Você ganhou {cont} partidas")
+
+#desafio.py 69
+cont1=cont2=cont3=0
+print("-----ANALISADOR DE DADOS-----")
+while True:
+    print("-"*10)
+    idade=int(input("Digite sua idade: "))
+    sexo= ' '
+    while sexo not in 'MF':
+        sexo=str(input("Digite seu sexo: [M/F]\n")).strip().upper()[0]
+    if idade >= 18:
+        cont1+=1
+    if sexo == "M":
+        cont2+=1
+    if sexo == "F" and idade< 20:
+        cont3+=1
+    p = ' '
+    while p not in 'SN':
+        p=str(input("Deseja continuar? [S/N]\n")).strip().upper()[0]
+    if p == "N":
+        break
+print("Com base nos dados citados:")
+print(f"{cont1} pessoas tem mais de 18 anos.")
+print(f"{cont2} Homens foram cadastrados.")
+print(f"{cont3} Mulheres tem menos de 20 anos.")
 
